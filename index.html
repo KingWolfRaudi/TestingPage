@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color: black; color: white; font-family: sans-serif; text-align: center; padding-top: 50px;">
+
+  <h3>Ingreso al Sistema</h3>
+
+  <input type="password" id="entrada" placeholder="Ingresa la clave" style="padding: 5px;">
+  <button onclick="validar()" style="padding: 5px; cursor: pointer;">Ver Texto</button>
+
+  <p id="mensaje" style="display:none; color: lightgreen; font-weight: bold; font-size: 1.2em; margin-top: 20px;">
+    ¡Acceso concedido! <br> Este es el texto secreto que ahora puedes leer.
+  </p>
+
+  <script>
+    function validar() {
+      // --- CONFIGURACIÓN ---
+      const claveSecreta = "hola123"; // La contraseña fija
+      // ---------------------
+
+      const valorIngresado = document.getElementById("entrada").value;
+      const mensajeElemento = document.getElementById("mensaje");
+
+      if (valorIngresado === claveSecreta) {
+        // Si es correcta, mostramos el mensaje
+        mensajeElemento.style.display = "block";
+      } else {
+        // Si es incorrecta, ocultamos el mensaje (por si estaba visible) y avisamos
+        mensajeElemento.style.display = "none";
+        alert("Contraseña incorrecta");
+      }
+    }
+  </script>
+
+</body>
+</html>
